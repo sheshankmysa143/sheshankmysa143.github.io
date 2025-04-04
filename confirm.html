@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmation - MovieTime</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+      <div class="logo">
+        <a href="index.html" style="text-decoration: none; color: rgb(0, 0, 0);">
+          <img src="images/logo.webp" alt="MovieTime Logo" class="logo-image">
+          MovieTime
+        </a>
+      </div>
+        <ul class="nav__links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="movies.html">Movies</a></li>
+            <li class="link"><a href="booking.html">Booking</a></li>
+            <li class="link"><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="section__container confirmation__page">
+        <h2 class="section__header">🎉 Payment Successful! 🎉</h2>
+
+        <div class="confirmation-box">
+            <img id="moviePoster" src="images/default-poster.jpg" alt="Movie Poster" class="movie-poster">
+            <p><strong>Movie:</strong> <span id="movieName"></span></p>
+            <p><strong>Cinema:</strong> <span id="cinemaName"></span></p>
+            <p><strong>Showtime:</strong> <span id="showtime"></span></p>
+            <p><strong>Tickets:</strong> <span id="tickets"></span></p>
+            <p><strong>Total Paid (₹):</strong> <span id="amount"></span></p>
+        </div>
+
+        <div class="button-group">
+            <a href="index.html"><button id="payNow">Back to Home</button></a>
+            <a href="my-tickets.html"><button id="payNow">View Tickets</button></a>
+        </div>
+    </section>
+
+    <script>
+        function getQueryParams(param) {
+            return new URLSearchParams(window.location.search).get(param);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const movie = getQueryParams("movie") || "Unknown Movie";
+            document.getElementById("movieName").textContent = movie;
+            document.getElementById("cinemaName").textContent = getQueryParams("cinema") || "Unknown Cinema";
+            document.getElementById("showtime").textContent = getQueryParams("time") || "Unknown Showtime";
+            document.getElementById("tickets").textContent = getQueryParams("tickets") || "1";
+            document.getElementById("amount").textContent = "₹" + (getQueryParams("amount") || "500");
+
+            const posters = {
+                "Kalki 2898 AD": "images/kalki.jpeg",
+                "Animal": "images/animal.jpg",
+                "Interstellar": "images/interstellar.jpg",
+                "Avengers: Endgame": "images/endgame.jpg",
+                "L2: Empuran": "images/l2-empuran.jpeg",
+                "The Dark Knight": "images/darkknight.jpg",
+                "Joker": "images/joker.jpg",
+                "Avatar": "images/avatar.jpg",
+                "Court": "images/Court.jpg",
+                "Salaar": "images/salaar.jpeg",
+                "HIT 3": "images/hit3.jpeg",
+                "Avengers: Infinity War": "images/infinitywar.jpg",
+            };
+
+            const posterSrc = posters[movie] || "default-poster.jpg";
+            document.getElementById("moviePoster").src = posterSrc;
+        });
+    </script>
+
+    <style>
+        .movie-poster {
+            width: 200px;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .confirmation-box {
+            text-align: center;
+        }
+        .button-group{
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;        }
+    </style>
+
+</body>
+<br>
+<footer class="footer">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <h3>MovieTime</h3>
+        <p>MovieTime is your one-stop platform for booking movie tickets effortlessly.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <p><a href="#">About Us</a></p>
+        <p><a href="#">Our Team</a></p>
+        <p><a href="#">Blog</a></p>
+        <p><a href="#">Movies</a></p>
+        <p><a href="#">Contact Us</a></p>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <p><a href="#">FAQs</a></p>
+        <p><a href="#">Terms & Conditions</a></p>
+        <p><a href="#">Privacy Policy</a></p>
+      </div>
+      <div class="footer__col">
+        <h4>Resources</h4>
+        <p><a href="#">Social Media</a></p>
+        <p><a href="#">Help Center</a></p>
+        <p><a href="#">Partnerships</a></p>
+      </div>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2025 MovieTime. All rights reserved.
+    </div>
+  </footer>
+</html>

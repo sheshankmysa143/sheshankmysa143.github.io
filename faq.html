@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs | MovieTime</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: rgb(0, 0, 0);">
+              <img src="images/logo.webp" alt="MovieTime Logo" class="logo-image">
+              MovieTime
+            </a>
+          </div>
+        <ul class="nav__links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="movies.html">Movies</a></li>
+            <li class="link"><a href="#">Blog</a></li>
+            <li class="link"><a href="contact.html">Contact Us</a></li>
+            <li class="link" id="authButton"></li>
+        </ul>
+    </nav>
+<br>
+<br>
+
+    <section class="section__container faq__container">
+        <h2 class="section__header">Frequently Asked Questions</h2>
+        <br>
+
+        <div class="faq">
+            <h4>1. How do I book a movie ticket?</h4>
+            <p>To book a ticket, visit the <b>Movies</b> section, select your movie, and click "Book Now".</p>
+        </div>
+        <br>
+
+        <div class="faq">
+            <h4>2. Do I need to create an account to book tickets?</h4>
+            <p>Yes, you need to log in to book movie tickets. If you don’t have an account, you can sign up for free.</p>
+        </div>
+        <br>
+
+        <div class="faq">
+            <h4>3. Can I cancel or change my booking?</h4>
+            <p>Unfortunately, once a ticket is booked, it cannot be canceled or modified. Please check your details carefully before confirming your booking.</p>
+        </div>
+        <br>
+
+        <div class="faq">
+            <h4>4. What payment methods do you accept?</h4>
+            <p>We accept payments via credit/debit cards, digital wallets (Google Pay, Apple Pay), and UPI payments.</p>
+        </div>
+        <br>
+
+        <div class="faq">
+            <h4>5. Will I receive a confirmation after booking?</h4>
+            <p>Yes! Once your payment is successful, you will receive an email confirmation with your ticket details.</p>
+        </div>
+        <br>
+
+        <div class="faq">
+            <h4>6. Can I book tickets for someone else?</h4>
+            <p>Yes! You can enter the details of the person attending the movie while booking.</p>
+        </div>
+        <br>
+
+        <div class="faq">
+            <h4>7. Is there a discount for group bookings?</h4>
+            <p>Yes, we offer discounts for group bookings of **10 or more tickets**. Contact our support team for more details.</p>
+        </div>
+        <br>
+
+        <div class="faq">
+            <h4>8. How do I log out of my account?</h4>
+            <p>Click the **"Logout"** button in the top-right corner of the page. This will log you out and redirect you to the login page.</p>
+        </div>
+        <br>
+
+        <div class="faq">
+            <h4>9. What if I forget my password?</h4>
+            <p>Click the **"Forgot Password?"** link on the login page and follow the instructions to reset your password.</p>
+        </div>
+        <br>
+
+        <div class="faq">
+            <h4>10. How can I contact customer support?</h4>
+            <p>You can reach our support team via the **"Contact Us"** page or email us at <b>support@movietime.com</b>.</p>
+        </div>
+
+    </section>
+    <br>
+    <br>
+
+    <footer class="footer">
+        <div class="section__container footer__container">
+          <div class="footer__col">
+            <h3>MovieTime</h3>
+            <p>MovieTime is your one-stop platform for booking movie tickets effortlessly.</p>
+          </div>
+          <div class="footer__col">
+            <h4>Company</h4>
+            <p><a href="#">About Us</a></p>
+            <p><a href="#">Our Team</a></p>
+            <p><a href="#">Blog</a></p>
+            <p><a href="#">Movies</a></p>
+            <p><a href="#">Contact Us</a></p>
+          </div>
+          <div class="footer__col">
+            <h4>Legal</h4>
+            <p><a href="faq.html">FAQs</a></p>
+            <p><a href="#">Terms & Conditions</a></p>
+            <p><a href="#">Privacy Policy</a></p>
+          </div>
+          <div class="footer__col">
+            <h4>Resources</h4>
+            <p><a href="#">Social Media</a></p>
+            <p><a href="#">Help Center</a></p>
+            <p><a href="#">Partnerships</a></p>
+          </div>
+        </div>
+        <div class="footer__bar">
+          Copyright © 2025 MovieTime. All rights reserved.
+        </div>
+      </footer>
+
+    <script>
+        function updateAuthButton() {
+            const authButton = document.getElementById("authButton");
+            const isLoggedIn = localStorage.getItem("isLoggedIn");
+            const username = localStorage.getItem("username");
+
+            if (isLoggedIn === "true") {
+                authButton.innerHTML = `
+                    <span style="color: white; margin-right: 10px;">Hello, ${username}!</span>
+                    <button onclick="logout()">Logout</button>
+                `;
+            } else {
+                authButton.innerHTML = '<a href="login.html"><button>Login</button></a>';
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem("isLoggedIn");
+            localStorage.removeItem("username");
+            window.location.href = "login.html"; // Redirect to login page after logout
+        }
+
+        updateAuthButton();
+    </script>
+
+</body>
+</html>

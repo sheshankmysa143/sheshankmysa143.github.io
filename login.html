@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | MovieTime</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: rgb(0, 0, 0);">
+              <img src="images/logo.webp" alt="MovieTime Logo" class="logo-image">
+              MovieTime
+            </a>
+          </div>
+        <ul class="nav__links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="movies.html">Movies</a></li>
+            <li class="link"><a href="blog.html">Blog</a></li>
+            <li class="link"><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="login__container">
+        <form class="login__form" onsubmit="return Login(event)">
+            <h2>Login to MovieTime</h2>
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <p id="loginMessage" class="error-message"></p>  
+
+            <button type="submit" class="login__btn">Login</button>
+
+            <p class="forgot__password"><a href="#">Forgot Password?</a></p>
+            <p class="signup__link">Don't have an account? <a href="#">Sign Up</a></p>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__bar">
+            Copyright © 2025 MovieTime. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function Login(event) {
+            event.preventDefault(); 
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const loginMessage = document.getElementById("loginMessage");
+
+            if (username === "admin" && password === "123") {
+                localStorage.setItem("isLoggedIn", "true"); 
+                localStorage.setItem("username", username); 
+                window.location.href = "index.html";
+            } else {
+                loginMessage.textContent = "Invalid username or password. Please try again.";
+                loginMessage.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>

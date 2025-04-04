@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Booking - Court</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: rgb(0, 0, 0);">
+              <img src="images/logo.webp" alt="MovieTime Logo" class="logo-image">
+              MovieTime
+            </a>
+          </div>
+        <ul class="nav__links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="movies.html">Movies</a></li>
+            <li class="link"><a href="blog.html">Blog</a></li>
+            <li class="link"><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="section__container booking__page">
+        <h2 class="section__header">Select a Cinema & Showtime</h2>
+
+        <div class="cinema-list">
+            <div class="cinema">
+                <h3>Prasad's Multiplex: Hyderabad</h3>
+                <p class="screen-info">IMAX 3D Dolby Atmos</p>
+                <div class="features">
+                    <span class="m-ticket">🎟️ M-Ticket</span>
+                    <span class="m-ticket">🎟️ E-Ticket</span>
+                    <span class="food">🍔 Food & Beverage</span>
+                </div>
+                <div class="showtimes">
+                    <button class="time" onclick="bookShow('Court', 'Prasad Multiplex', '09:00 AM')">09:00 AM</button>
+                    <button class="time" onclick="bookShow('Court', 'Prasad Multiplex', '12:00 PM')">12:00 PM</button>
+                    <button class="time" onclick="bookShow('Court', 'Prasad Multiplex', '03:00 PM')">03:00 PM</button>
+                    <button class="time" onclick="bookShow('Court', 'Prasad Multiplex', '06:00 PM')">06:00 PM</button>
+                </div>
+                <p class="cancel-info">Non-cancellable</p>
+            </div>
+
+            <div class="cinema">
+                <h3>Sudarshan 35MM: RTC X Roads</h3>
+                <p class="screen-info">4K Laser & Dolby Atmos</p>
+                <div class="features">
+                    <span class="m-ticket">🎟️ M-Ticket</span>
+                </div>
+                <div class="showtimes">
+                    <button class="time" onclick="bookShow('Court', 'Sudarshan 35MM', '09:00 AM')">09:00 AM</button>
+                    <button class="time" onclick="bookShow('Court', 'Sudarshan 35MM', '12:00 PM')">12:00 PM</button>
+                    <button class="time" onclick="bookShow('Court', 'Sudarshan 35MM', '03:00 PM')">03:00 PM</button>
+                    <button class="time" onclick="bookShow('Court', 'Sudarshan 35MM', '06:00 PM')">06:00 PM</button>
+                </div>
+                <p class="cancel-info">Non-cancellable</p>
+            </div>
+
+            <div class="cinema">
+                <h3>AMB Cinemas: Gachibowli</h3>
+                <p class="screen-info">4K Dolby Atmos 7.1</p>
+                <div class="features">
+                    <span class="m-ticket">🎟️ M-Ticket</span>
+                    <span class="m-ticket">🎟️ E-Ticket</span>
+                    <span class="food">🍔 Food & Beverage</span>
+                </div>
+                <div class="showtimes">
+                    <button class="time" onclick="bookShow('Court', 'AMB Cinemas', '09:00 AM')">09:00 AM</button>
+                    <button class="time" onclick="bookShow('Court', 'AMB Cinemas', '12:00 PM')">12:00 PM</button>
+                    <button class="time" onclick="bookShow('Court', 'AMB Cinemas', '03:00 PM')">03:00 PM</button>
+                    <button class="time" onclick="bookShow('Court', 'AMB Cinemas', '06:00 PM')">06:00 PM</button>
+                </div>
+                <p class="cancel-info">Non-cancellable</p>
+            </div>
+
+            <div class="cinema">
+                <h3>PVR Cinemas: Hyderabad Central</h3>
+                <p class="screen-info">4K Projection & Dolby Surround</p>
+                <div class="features">
+                    <span class="m-ticket">🎟️ M-Ticket</span>
+                    <span class="m-ticket">🎟️ E-Ticket</span>
+                    <span class="food">🍔 Food & Beverage</span>
+                </div>
+                <div class="showtimes">
+                    <button class="time" onclick="bookShow('Court', 'PVR Hyderabad Central', '10:00 AM')">10:00 AM</button>
+                    <button class="time" onclick="bookShow('Court', 'PVR Hyderabad Central', '01:00 PM')">01:00 PM</button>
+                    <button class="time" onclick="bookShow('Court', 'PVR Hyderabad Central', '04:00 PM')">04:00 PM</button>
+                </div>
+            </div>
+
+            <div class="cinema">
+                <h3>Cinepolis: Manjeera Mall</h3>
+                <p class="screen-info">Dolby Cinema</p>
+                <div class="features">
+                    <span class="m-ticket">🎟️ M-Ticket</span>
+                    <span class="m-ticket">🎟️ E-Ticket</span>
+                    <span class="food">🍔 Food & Beverage</span>
+                </div>
+                <div class="showtimes">
+                    <button class="time" onclick="bookShow('Court', 'Cinepolis Manjeera Mall', '11:00 AM')">11:00 AM</button>
+                    <button class="time" onclick="bookShow('Court', 'Cinepolis Manjeera Mall', '02:00 PM')">02:00 PM</button>
+                    <button class="time" onclick="bookShow('Court', 'Cinepolis Manjeera Mall', '05:00 PM')">05:00 PM</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <h3>MovieTime</h3>
+                <p>Your go-to platform for seamless movie booking.</p>
+            </div>
+        </div>
+        <div class="footer__bar">
+            Copyright © 2025 MovieTime. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function bookShow(movie, cinema, time) {
+            window.location.href = `payment.html?movie=${encodeURIComponent(movie)}&cinema=${encodeURIComponent(cinema)}&time=${encodeURIComponent(time)}`;
+        }
+    </script>
+</body>
+</html>

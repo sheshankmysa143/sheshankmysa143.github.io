@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>MovieTime Passport</title>
+    <style>
+        .section__header {
+            text-align: center;
+            color: #000000;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .passport-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .passport-card {
+            background: #fff;
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 1px solid #f0f0f0;
+        }
+        .passport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(139, 0, 0, 0.15);
+        }
+        .passport-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #8B0000;
+            font-weight: 600;
+        }
+        .passport-price {
+            background: #8B0000;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        .feature-item {
+            background: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            color: #333;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s;
+        }
+        .feature-item:hover {
+            border-color: #8B0000;
+            background: #fff9f9;
+        }
+        .key-highlights {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 1px solid #8B0000;
+        }
+        .key-highlights h3 { 
+            color: #8B0000;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .key-highlights p {
+            color: #333;
+        }
+        .join-button {
+            background: #8B0000;
+            color: #fff;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .join-button:hover {
+            background: #580000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 0, 0, 0.2);
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: rgb(0, 0, 0);">
+              <img src="images/logo.webp" alt="MovieTime Logo" class="logo-image">
+              MovieTime
+            </a>
+          </div>
+        <ul class="nav__links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="movies.html">Movies</a></li>
+            <li class="link"><a href="blog.html">Blog</a></li>
+            <li class="link"><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="section__container">
+        <h2 class="section__header">MovieTime Subscription Plans</h2>
+        <p style="text-align: center; margin-bottom: 2rem; color: #666;">Choose your perfect movie subscription plan</p>
+        <div class="passport-container">
+            <!-- Monthly Plan -->
+            <div class="passport-card">
+                <div class="passport-header">
+                    <span>PLAN A</span>
+                    <span class="passport-price">Monthly @ ₹349</span>
+                </div>
+                <p>Auto Debit Monthly up to 3 months</p>
+                <div class="feature-item">📅 1 x ticket per day<br>Redeem online only from Monday to Thursday</div>
+                <div class="feature-item">🎬 Total 4 visit(s) allowed<br>Enjoy a new movie every week</div>
+                <div class="feature-item">⏰ Blackout Period on New Films<br>Not available on Passport for up to 14 days</div>
+                <div class="key-highlights">
+                    <h3>Key Highlights - Zone B</h3>
+                    <p>(Applicable in Telangana, Andhra Pradesh, Tamil Nadu , Maharashtra & Kerala State only)</p>
+                    <p>Get 4 movie tickets in 30 Days</p>
+                </div>
+                <button class="join-button">Join Now For ₹ 349</button>
+            </div>
+
+            <!-- Quarterly Plan -->
+            <div class="passport-card">
+                <div class="passport-header">
+                    <span>PLAN B</span>
+                    <span class="passport-price">Quarterly @ ₹1047</span>
+                </div>
+                <p>90 Days Validity</p>
+                <div class="feature-item">📅 1 x ticket per day<br>Redeem online only from Monday to Thursday</div>
+                <div class="feature-item">🎬 Total 12 visit(s) allowed<br>Enjoy a new movie every week</div>
+                <div class="feature-item">🎟️ 7 F&B vouchers worth ₹50/- each</div>
+                <div class="key-highlights">
+                    <h3>Key Highlights - Zone B</h3>
+                    <p>(Applicable in Telangana, Andhra Pradesh, Tamil Nadu , Maharashtra & Kerala State only)</p>
+                    <p>Get 12 movie tickets & 7 F&B Vouchers worth ₹350 in 90 Days</p>
+                </div>
+                <button class="join-button">Join Now For ₹ 1047</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <h3>MovieTime</h3>
+                <p>Your go-to platform for seamless movie booking.</p>
+            </div>
+            <div class="footer__col">
+                <h4>Company</h4>
+                <p><a href="#">About Us</a></p>
+                <p><a href="#">Our Team</a></p>
+                <p><a href="#">Blog</a></p>
+                <p><a href="#">Movies</a></p>
+                <p><a href="#">Contact Us</a></p>
+            </div>
+            <div class="footer__col">
+                <h4>Legal</h4>
+                <p><a href="#">FAQs</a></p>
+                <p><a href="#">Terms & Conditions</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+            </div>
+            <div class="footer__col">
+                <h4>Resources</h4>
+                <p><a href="#">Social Media</a></p>
+                <p><a href="#">Help Center</a></p>
+                <p><a href="#">Partnerships</a></p>
+            </div>
+        </div>
+        <div class="footer__bar">
+            Copyright © 2025 MovieTime. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html> 

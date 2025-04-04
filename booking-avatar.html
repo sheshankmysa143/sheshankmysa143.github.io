@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Avatar - MovieTime</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: rgb(0, 0, 0);">
+              <img src="images/logo.webp" alt="MovieTime Logo" class="logo-image">
+              MovieTime
+            </a>
+          </div>       
+      <ul class="nav__links">
+
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="movies.html">Movies</a></li>
+        </ul>
+    </nav>
+
+    <section class="section__container booking__page">
+        <h2 class="section__header">Book Tickets for Avatar</h2>
+        <div class="cinema-list">
+            <div class="cinema">
+                <h3>Cinepolis: Hyderabad</h3>
+                <p class="screen-info">4K Dolby Atmos</p>
+                <div class="showtimes">
+                    <button class="time" onclick="bookShow('Avatar', 'Cinepolis', '09:00 AM')">09:00 AM</button>
+                    <button class="time" onclick="bookShow('Avatar', 'Cinepolis', '12:00 PM')">12:00 PM</button>
+                    <button class="time" onclick="bookShow('Avatar', 'Cinepolis', '03:00 PM')">03:00 PM</button>
+                    <button class="time" onclick="bookShow('Avatar', 'Cinepolis', '06:00 PM')">06:00 PM</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function bookShow(movie, cinema, time) {
+            window.location.href = `payment.html?movie=${encodeURIComponent(movie)}&cinema=${encodeURIComponent(cinema)}&time=${encodeURIComponent(time)}`;
+        }
+    </script>
+
+</body>
+</html>

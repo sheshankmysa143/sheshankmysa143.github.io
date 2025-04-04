@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway - MovieTime</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+      <div class="logo">
+        <a href="index.html" style="text-decoration: none; color: rgb(0, 0, 0);">
+          <img src="images/logo.webp" alt="MovieTime Logo" class="logo-image">
+          MovieTime
+        </a>
+      </div>
+        <ul class="nav__links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="movies.html">Movies</a></li>
+            <li class="link"><a href="booking.html">Booking</a></li>
+            <li class="link"><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="section__container payment__page">
+        <h2 class="section__header">Select Payment Method</h2>
+
+        <div class="payment-options">
+            <label>
+                <input type="radio" name="paymentMethod" value="card" checked> Credit/Debit Card
+            </label>
+            <label>
+                <input type="radio" name="paymentMethod" value="upi"> UPI Payment
+            </label>
+            <label>
+                <input type="radio" name="paymentMethod" value="qr"> QR Code
+            </label>
+        </div>
+
+        <div id="cardDetails" class="payment-section">
+            <h3>Enter Card Details</h3>
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+
+            <label for="cardExpiry">Expiry Date:</label>
+            <input type="text" id="cardExpiry" placeholder="MM/YY">
+
+            <label for="cardCVV">CVV:</label>
+            <input type="password" id="cardCVV" placeholder="123">
+
+            <label for="cardHolder">Card Holder Name:</label>
+            <input type="text" id="cardHolder" placeholder="Name On Card">
+        </div>
+
+        <div id="upiDetails" class="payment-section" style="display: none;">
+            <h3>Enter UPI ID</h3>
+            <label for="upiID">UPI ID:</label>
+            <input type="text" id="upiID" placeholder="yourname@upi">
+        </div>
+
+        <div id="qrDetails" class="payment-section" style="display: none;">
+            <div class="qr-container">
+                <img src="images/qr-code.jpeg" alt="QR Code for Payment">
+                <p>Scan to pay</p>
+            </div>
+        </div>
+
+        <button id="payNow">Pay Now</button>
+    </section>
+
+    <script>
+        function getQueryParams(param) {
+            return new URLSearchParams(window.location.search).get(param);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+          window.movie = getQueryParams("movie") || "Unknown Movie";
+            window.cinema = getQueryParams("cinema") || "Unknown Cinema";
+            window.showtime = getQueryParams("time") || "Unknown Showtime";
+            window.tickets = getQueryParams("tickets") || "1";
+            window.amount = getQueryParams("amount") || "500";
+
+            document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
+                radio.addEventListener("change", function () {
+                    document.getElementById("cardDetails").style.display = this.value === "card" ? "block" : "none";
+                    document.getElementById("upiDetails").style.display = this.value === "upi" ? "block" : "none";
+                    document.getElementById("qrDetails").style.display = this.value === "qr" ? "block" : "none";
+                });
+            });
+        });
+
+        document.getElementById("payNow").addEventListener("click", function () {
+            const selectedMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+            window.location.href = `confirm.html?movie=${encodeURIComponent(movie)}&cinema=${encodeURIComponent(cinema)}&time=${encodeURIComponent(showtime)}&tickets=${tickets}&amount=${amount}`;
+        });
+    </script>
+
+<footer class="footer">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <h3>MovieTime</h3>
+        <p>MovieTime is your one-stop platform for booking movie tickets effortlessly.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <p><a href="#">About Us</a></p>
+        <p><a href="#">Our Team</a></p>
+        <p><a href="#">Blog</a></p>
+        <p><a href="#">Movies</a></p>
+        <p><a href="#">Contact Us</a></p>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <p><a href="#">FAQs</a></p>
+        <p><a href="#">Terms & Conditions</a></p>
+        <p><a href="#">Privacy Policy</a></p>
+      </div>
+      <div class="footer__col">
+        <h4>Resources</h4>
+        <p><a href="#">Social Media</a></p>
+        <p><a href="#">Help Center</a></p>
+        <p><a href="#">Partnerships</a></p>
+      </div>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2025 MovieTime. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>

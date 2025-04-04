@@ -1,0 +1,682 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 5px 1px;
+}
+
+.section__header {
+  font-size: 2rem;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  border-radius: 25px;
+}
+
+.login__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background-color: #f4f4f4;
+}
+
+.login__form {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  text-align: center;
+}
+
+.login__form h2 {
+  margin-bottom: 20px;
+}
+
+.login__form label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.login__form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.login__btn {
+  width: 100%;
+  background-color: #ff3d00;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login__btn:hover {
+  background-color: #d63400;
+}
+
+.forgot__password,
+.signup__link {
+  margin-top: 10px;
+}
+
+.forgot__password a,
+.signup__link a {
+  color: #ff3d00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.forgot__password a:hover,
+.signup__link a:hover {
+  text-decoration: underline;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-direction: row;
+}
+
+.logo-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.link a {
+  font-weight: 500;
+  color: black;
+  transition: 0.3s;
+}
+
+.login-btn {
+  background-color: #ff3d00;
+  color: white !important;
+  padding: 8px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #d63400;
+}
+
+.header__container {
+  padding: 1rem 1rem 5rem 1rem;
+}
+
+.header__image__container {
+  position: relative;
+  min-height: 500px;
+  background-image: linear-gradient(
+      to right,
+      rgba(44, 56, 85, 0.9),
+      rgba(100, 125, 187, 0.1)
+    ),
+    url("images/cinema.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 2rem;
+}
+
+.header__content {
+  max-width: 600px;
+  padding: 5rem 2rem;
+}
+
+.header__content h1 {
+  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  line-height: 4rem;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+
+.header__content p {
+  color: rgb(255, 255, 255);
+}
+
+.cinema-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.cinema {
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cinema h3 {
+  font-size: 1.2rem;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.screen-info {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.features {
+  display: flex;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.m-ticket {
+  color: green;
+  font-weight: bold;
+}
+
+.food {
+  color: orange;
+  font-weight: bold;
+}
+
+.showtimes {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.time {
+  background: green;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.time:hover {
+  background: darkgreen;
+}
+
+.cancel-info {
+  font-size: 0.8rem;
+  color: red;
+  margin-top: 5px;
+}
+
+.movie__info {
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.popular__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.popular__card {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  height: 600px;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popular__card:hover {
+  transform: translateY(-5px);
+}
+
+.popular__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.popular__card:hover img {
+  transform: scale(1.05);
+}
+
+.popular__content {
+  padding: 1rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popular__card:hover .popular__content {
+  transform: translateY(0);
+}
+
+.popular__card__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.popular__card__header h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+}
+
+.popular__content p {
+  color: white;
+  margin-bottom: 1rem;
+  text-align: center;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.popular__card .book__now {
+  display: none;
+  background: #ff3d00;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.popular__card:hover .book__now {
+  display: inline-block;
+}
+
+.popular__card .book__now:hover {
+  background: #d63400;
+}
+
+.reward__container {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 2rem;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  background-image: url("images/pass.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.reward__container p {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color:rgb(255, 255, 255);
+}
+
+.reward__container h4 {
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color:rgb(255, 255, 255);
+}
+
+.reward__btn {
+  padding: 1rem 3rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: white;
+  background-color: red;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reward__btn:hover {
+  background-color: rgb(224, 53, 53);
+}
+
+.payment__page {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.payment__page h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.payment-form label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #444;
+    text-align: left;
+}
+
+.payment-form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+    transition: 0.3s;
+}
+
+.payment-form input:focus {
+    border-color: #ff4b5c;
+    background: #fff;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(255, 75, 92, 0.3);
+}
+
+#cardDetails{
+  text-align: center;
+}
+.footer {
+  background-color: #f3f4f6;
+  gap: 10rem;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.footer__col h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color:black;
+}
+
+.footer__col h4 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color:black;
+}
+
+.footer__col p {
+  margin-bottom: 1rem;
+  color:black;
+  transition: 0.3s;
+}
+
+.footer__col a {
+  margin-bottom: 1rem;
+  color:black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer__bar {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color:black;
+  text-align: center;
+}
+
+@media (width < 900px) {
+  .booking__container form {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .popular__grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+  .cinema {
+      padding: 0.8rem;
+  }
+
+  .time {
+      padding: 6px 12px;
+      font-size: 0.9rem;
+  }
+
+.section__header {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.payment-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.payment-option {
+    background: rgb(255, 255, 255);
+    border: 2px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.payment-option:hover {
+    border-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+.payment-option.selected {
+    border-color: #2563eb;
+    background: #f3f4f6;
+}
+
+.payment-option i {
+    font-size: 1.75rem;
+    color: #2563eb;
+    margin-bottom: 0.75rem;
+}
+
+.payment-option label {
+    font-weight: 500;
+    color: #374151;
+}
+
+.payment-section {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.payment-section h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.payment-section label {
+    display: block;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.payment-section input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    margin-bottom: 1rem;
+}
+
+.payment-section input:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.payment-section input::placeholder {
+    color: #9ca3af;
+}
+
+#payNow {
+    width: 100%;
+    padding: 1rem;
+    background: rgb(255, 80, 80);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#payNow:hover {
+    background: #ff4343;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+#payNow:active {
+    transform: translateY(0);
+}
+
+.qr-container {
+    text-align: center;
+    padding: 0.25rem;
+    background: white;
+    border-radius: 0.25rem;
+    border: 1px solid #e5e7eb;
+}
+
+.qr-container img {
+    max-width: 250px;
+    border-radius: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.qr-container p {
+    color: #666;
+    font-size: 0.7rem;
+}
+
+@media (max-width: 768px) {
+    .payment-options {
+        grid-template-columns: 1fr;
+    }
+
+    .payment__page {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .section__header {
+        font-size: 1.75rem;
+    }
+}
+
